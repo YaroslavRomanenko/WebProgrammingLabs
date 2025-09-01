@@ -1,1 +1,1 @@
-# web-programming_lab_1
+# WebProgrammingLabs
