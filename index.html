@@ -5,85 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Головна сторінка навчального лендінгу: новини, послуги, переваги." />
 
-    <title>Лабораторна 2 - Головна</title>
+    <title>Лабораторна 3 - Головна</title>
 
     <link rel="icon" href="assets/images/favicon.ico" />
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <a class="skip-link" href="#main">Перейти до основного контенту</a>
 
-    <header class="site-header">
-        <h1 id="site-title">Мій перший лендінг</h1>
-        <nav class="site-nav" aria-label="Головна навігація">
-            <ul>
-                <li><a href="index.html" aria-current="page">Головна</a></li>
-                <li><a href="about.html">Про нас</a></li>
-                <li><a href="contacts.html">Контакти</a></li>
+    <header class="header">
+        <h1 id="header__title">Мій перший лендінг</h1>
+        <nav class="navigation">
+            <ul class="navigation__list">
+                <li class="navigation__item"><a href="index.html" class="navigation__link" aria-current="page">Головна</a></li>
+                <li class="navigation__item"><a href="about.html" class="navigation__link">Про нас</a></li>
+                <li class="navigation__item"><a href="contacts.html" class="navigation__link">Контакти</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="main">
-        <article class="hero-article">
-            <header>
-                <h2>Новини</h2>
-            </header>
-            <p>Романенко Ярослав Олександрович почав роботу над HTML-каркасом.</p>
-            <figure>
-                <img src="assets/images/placeholder.png" alt="Фото студента" width="640" />
-                <figcaption>Це зображення для новини</figcaption>
+    <main class="main">
+        <article class="article">
+            <h2 class="article__title">Новини дня</h2>
+            <p class="article__text">Студент Романенко Ярослав Олександрович розпочав роботу над лабораторною №3</p>
+            <figure class="media article__media media--framed">
+                <img
+                        class="media__image"
+                        src="assets/images/placeholder.png"
+                        alt="Фото студента"
+                        width="640"
+                        loading="lazy"
+                        decoding="async"
+                />
+                <figcaption class="media__caption">Це зображення для новини</figcaption>
             </figure>
         </article>
 
-        <section aria-labelledby="benefits-title" class="benefits">
-            <h3 id="benefits-title">Наші переваги</h3>
-            <ul class="advantages">
-                <li>Сучасні технології фронтенду</li>
-                <li>Командна робота та менторинг</li>
-                <li>Практика на реальних кейсах</li>
-            </ul>
-        </section>
-
-        <section aria-labelledby="services-title" class="services">
-            <h3 id="services-title">Наші послуги</h3>
-            <table>
+        <section class="services">
+            <h3 class="services__title">Наші послуги</h3>
+            <table class="services__table">
                 <thead>
-                    <tr>
-                        <th scope="col">Послуга</th>
-                        <th scope="col">Опис</th>
-                        <th scope="col">Ціна</th>
-                    </tr>
+                <tr class="services__row">
+                    <th class="services__header">Послуга</th>
+                    <th class="services__header">Опис</th>
+                    <th class="services__header">Ціна</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Розробка сайту</td>
-                        <td>Лендінг або невеликий корпоративний сайт</td>
-                        <td>500 $</td>
-                    </tr>
-                    <tr>
-                        <td>SEO-оптимізація</td>
-                        <td>Базовий аудит та покращення видимості</td>
-                        <td>300 $</td>
-                    </tr>
-                    <tr>
-                        <td>Підтримка</td>
-                        <td>Оновлення та технічна допомога</td>
-                        <td>100 $ / місяць</td>
-                    </tr>
+                <tr class="services__row">
+                    <td class="services__cell">Розробка сайту</td>
+                    <td class="services__cell">Лендінг або корпоративний сайт</td>
+                    <td class="services__cell">2 булочки та чай</td>
+                </tr>
                 </tbody>
             </table>
         </section>
     </main>
 
-    <aside class="sidebar" aria-label="Додаткова інформація">
-        <h3>Корисні посилання</h3>
-        <ul>
-            <li><a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer">MDN Web Docs</a></li>
-        </ul>
-    </aside>
+<aside class="sidebar sidebar--links" aria-label="Корисні посилання">
+    <h3 class="sidebar__title">Корисні посилання</h3>
+    <ul class="sidebar__list">
+        <li class="sidebar__item">
+            <a href="https://developer.mozilla.org/" target="_blank" rel="noopener noreferrer" class="sidebar__link">MDN Web Docs</a>
+        </li>
+    </ul>
+</aside>
 
-    <footer class="site-footer">
-        <p>@ 2025 Група 6.1213-пі-2</p>
-    </footer>
+<footer class="footer">
+    <p class="footer__text">@ 2025 Група <span class="footer__group-name">6.1213-пі-2</span></p>
+</footer>
 </body>
 </html>
