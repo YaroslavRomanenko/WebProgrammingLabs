@@ -8,22 +8,22 @@
     <title>Лабораторна 2 - Головна</title>
 
     <link rel="icon" href="assets/images/favicon.ico" />
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-<a class="skip-link" href="#main">Перейти до основного контенту</a>
 
 <header class="header">
     <h1 id="header__title">Мій перший лендінг</h1>
     <nav class="navigation">
         <ul class="navigation__list">
-            <li class="navigation__item"><a href="index.html" aria-current="page">Головна</a></li>
-            <li class="navigation__item"><a href="about.html">Про нас</a></li>
-            <li class="navigation__item"><a href="contacts.html">Контакти</a></li>
+            <li class="navigation__item"><a href="index.html" class="navigation__link" aria-current="page">Головна</a></li>
+            <li class="navigation__item"><a href="about.html" class="navigation__link">Про нас</a></li>
+            <li class="navigation__item"><a href="contacts.html" class="navigation__link">Контакти</a></li>
         </ul>
     </nav>
 </header>
 
-<main id="main">
+<main class="main">
     <h2 class="main__title">Зв'яжіться з нами</h2>
 
     <form class="contact-form" action="#" method="post">
@@ -82,7 +82,7 @@
                     maxlength="500"
             ></textarea>
         </div>
-        <button type="submit">Надіслати</button>
+        <button type="submit" class="contact-form__button">Надіслати</button>
     </form>
 </main>
 
@@ -96,7 +96,7 @@
 </aside>
 
 <footer class="footer">
-    <p class="footer__text">@ 2025 Група <span class="footer__group-name">6.1213-пі-2</span>></p>
+    <p class="footer__text">@ 2025 Група <span class="footer__group-name">6.1213-пі-2</span></p>
 </footer>
 
 </body>
