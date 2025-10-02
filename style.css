@@ -19,6 +19,10 @@
     --c-primary-600: var(--brand-600);
     --c-surface: var(--surface);
     --c-border: var(--border);
+
+    --fs-body: clamp(1rem, 0.94rem + 0.5vw, 1.125rem);
+    --fs-h2: clamp(1.25rem, 1.05rem + 1.2vw, 1.6rem);
+    --fs-h1: clamp(1.6rem, 1.2rem + 2.2vw, 2.2rem);
 }
 
 *,
@@ -29,6 +33,7 @@
 html { font-size: 16px; }
 body {
     margin: 0;
+    font-size: var(--fs-body);
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     color: var(--fg);
     background: var(--bg);
@@ -43,13 +48,14 @@ ul[class], ol[class] { list-style: none; margin: 0; padding: 0; }
 
 .layout{
     display: grid;
-    grid-template-columns: 280px 1fr;      /* ліва колонка + контент */
-    grid-template-rows: auto 1fr auto;     /* header | контент | footer */
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
     grid-template-areas:
-   "header header"
-   "sidenav main"
-   "footer footer";
-    min-height: 100vh;
+   "header"
+   "sidenav"
+   "main"
+   "footer";
+    min-height: 100dvh;
 }
 
 /* HEADER AND NAVIGATION */
@@ -65,7 +71,7 @@ ul[class], ol[class] { list-style: none; margin: 0; padding: 0; }
 .header__title{
     margin: 0;
     padding: var(--space-4) var(--space-6) 0 var(--space-6);
-    font-size: 1.5rem;
+    font-size: var(--fs-h1);
     color: var(--brand);
 }
 
@@ -121,10 +127,13 @@ ul[class], ol[class] { list-style: none; margin: 0; padding: 0; }
     width: 100%;
     margin-inline: auto;
 }
-.main__title{ margin: 0 0 var(--space-6); font-size: 1.6rem; }
+.main__title{ margin: 0 0 var(--space-6); }
 
 /* Секція новин */
-.news__title{ margin: 0 0 var(--space-4); font-size: 1.6rem; }
+.news__title{ margin: 0 0 var(--space-4); }
+.main__title, .news__title { font-size: var(--fs-h2); }
+
+
 .news__list{
     display: grid;
     gap: var(--space-6);
@@ -174,6 +183,8 @@ ul[class], ol[class] { list-style: none; margin: 0; padding: 0; }
 
 .media{
     margin: var(--space-6) 0;
+    aspect-ratio: 16/9
+    overflow: clip;
 }
 .media--framed{
     background: #fafafa;
@@ -184,7 +195,9 @@ ul[class], ol[class] { list-style: none; margin: 0; padding: 0; }
 .media__img{
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     border-radius: var(--radius-1);
 }
 .media__caption{
@@ -289,18 +302,18 @@ ul[class], ol[class] { list-style: none; margin: 0; padding: 0; }
     border-top: 1px solid var(--border);
     padding: var(--space-6);
 }
-.footer__text{ margin: 0; font-size: .95rem; }
+.footer__text{ margin: 0; font-size: .95rem; order: 2; }
 .footer__group-name{ color: var(--brand); font-weight: 700; }
 
 .footer__inner{
     display: grid;
     gap: var(--space-4);
-    grid-template-columns: 1fr minmax(280px, 1fr);
+    grid-template-columns: 1fr;
     align-items: start;
     max-width: var(--container);
     margin: 0 auto;
 }
-.footer__contacts{ font-style: normal; background: #fff; }
+.footer__contacts{ font-style: normal; }
 .footer__contacts-title{
     margin: 0 0 var(--space-3);
     font-size: 1.05rem;
@@ -323,3 +336,51 @@ ul[class], ol[class] { list-style: none; margin: 0; padding: 0; }
 .footer__link{ color: var(--brand); text-decoration: none; }
 .footer__link:hover,
 .footer__link:focus-visible{ text-decoration: underline; }
+
+@media (min-width: 640px) {
+    .layout {
+        grid-template-columns: 220px 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+        "header header"
+        "sidenav main"
+        "footer footer";
+    }
+
+    .footer__inner {
+        grid-template-columns: 1fr minmax(220px, 1fr);
+    }
+
+    .footer__text { order: initial}
+}
+
+@media (min-width: 1024px) {
+    .layout {
+        grid-template-columns: 280px 1fr;
+    }
+
+    .footer__inner {
+        grid-template-columns: 1fr minmax(280px, 1fr);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0b1020;
+        --surface: #101528;
+        --fg: #e7eaf3;
+        --fg-muted: #b7bfd3;
+        --border: #232a3b;
+        --brand: #7fb3ff;
+        --brand-600: #6aa2f0;
+        --brand-100: #17233b;
+    }
+
+    .sidebar {
+        background: var(--surface);
+    }
+
+    .news-card__meta {
+        background: color-mix(in srgb, var(--surface) 92%, #fff 8%);
+    }
+}

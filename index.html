@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Лабораторна 4 - Головна</title>
+    <title>Лабораторна 5 - Головна</title>
     <meta name="description" content="Головна сторінка навчального лендінгу: новини, послуги, переваги."/>
     <link rel="icon" href="assets/images/favicon.ico"/>
     <link rel="stylesheet" href="style.css"/>
@@ -11,7 +11,7 @@
 <body>
 <div class="layout">
     <header class="header">
-        <h1 class="header__title">Лабораторна № 4</h1>
+        <h1 class="header__title">Лабораторна № 5</h1>
         <nav class="nav">
             <a href="index.html" class="nav__link">Головна</a>
             <a href="about.html" class="nav__link">Про нас</a>
@@ -54,7 +54,17 @@
             <div class="news__list">
                 <article class="news-card">
                     <figure class="news-card__media media">
-                        <img class="media__img" src="assets/images/placeholder.png" alt="Фото зі студентського заходу" loading="lazy" decoding="async" />
+                        <picture>
+                            <source type="image/avif" srcset="assets/images/placeholder.avif">
+                            <source type="image/webp" srcset="assets/images/placeholder.webp">
+                            <img
+                                    src="assets/images/placeholder.png"
+                                    alt="Flexbox + Grid"
+                                    class="media__img"
+                                    width="640" height="360"
+                                    loading="lazy" decoding="async"
+                            />
+                        </picture>
                     </figure>
                     <h3 class="news-card__title">Старт навчального веб-проєкту</h3>
                     <p class="news-card__excerpt">Група розпочала роботу над веб-проєктом, який охопить HTML, CSS, JS та React…</p>
