@@ -12,7 +12,7 @@ export default defineConfig({
         tailwindcss(),
         handlebars({
             partialDirectory: resolve(__dirname, 'src', 'partials'),
-            context: { siteName: 'Лабороторна 6', labName: 'Лабороторна № 6'},
+            context: { siteName: 'Лабороторна 7', labName: 'Лабороторна № 7'},
             reloadOnPartialChange: true
         }),
     ],
