@@ -1,31 +1,40 @@
-{{#> layout pageTitle="Головна" studentGroup="6.1213-пі-2" studentEmail="yaroslavromanenko456@gmail.com" }}
+{{#> layout pageTitle="Головна" studentGroup="8.1211-іпз" studentEmail="krivoyyaroslav21@gmail.com" pageCode = "main"}}
 <section class="news">
     <h2 class="news__title">Останні новини</h2>
     <div class="news__list">
-        <article class="news-card card">
+        <article class="card">
             <figure class="news-card__media media">
                 <picture>
-                    <source type="image/avif" srcset="assets/images/placeholder.avif">
-                    <source type="image/webp" srcset="assets/images/placeholder.webp">
+                    <source type="image/avif" srcset="/assets/images/placeholder.avif">
+                    <source type="image/webp" srcset="/assets/images/placeholder.webp">
                     <img
-                            src="assets/images/placeholder.png"
+                            src="/assets/images/placeholder.jpg"
                             alt="Flexbox + Grid"
                             class="media__img"
                             width="640" height="360"
-                            loading="lazy" decoding="async"
-                    />
+                            loading="lazy" decoding="async" />
                 </picture>
             </figure>
-            <h3 class="news-card__title text-[1.1rem] leading-tight">Старт навчального веб-проєкту</h3>
+            <h3 class="news-card__title text-[1.1rem]">Старт навчального веб-проєкту</h3>
             <p class="news-card__excerpt text-[color:var(--fg-muted)]">Група розпочала роботу над веб-проєктом, який охопить HTML, CSS, JS та React…</p>
-            <div class="news-card__meta card__meta bg-white dark:bg-[color-mix(in_srgb,var(--surface)_92%,#fff_8%)]">
+
+            <div class=" card__meta bg-white dark:bg-[color-mix(in_srgb,var(--surface)_92%,#fff_8%)]">
                 <time class="news-card__date text-[color:var(--fg-muted)] text-[.95rem]">10 вер 2025</time>
-                <a href="#" class="news-card__btn btn-brand">Читати далі</a>
+                <a href="#" class=" btn-brand">Читати далі</a>
             </div>
         </article>
         <article class="news-card">
             <figure class="news-card__media media">
-                <img class="media__img" src="assets/images/placeholder.png" alt="Демонстрація лейаутів на уроці" loading="lazy" decoding="async" />
+                <picture>
+                    <source type="image/avif" srcset="/assets/images/placeholder.avif">
+                    <source type="image/webp" srcset="/assets/images/placeholder.webp">
+                    <img
+                            src="/assets/images/placeholder.jpg"
+                            alt="Flexbox + Grid"
+                            class="media__img"
+                            width="640" height="360"
+                            loading="lazy" decoding="async" />
+                </picture>
             </figure>
             <h3 class="news-card__title">Flexbox + Grid: практика</h3>
             <p class="news-card__excerpt">На четвертій лекції розберемо одновимірний та двовимірний лейаути з практикою…</p>
@@ -36,7 +45,16 @@
         </article>
         <article class="news-card">
             <figure class="news-card__media media">
-                <img class="media__img" src="assets/images/placeholder.png" alt="React" loading="lazy" decoding="async" />
+                <picture>
+                    <source type="image/avif" srcset="/assets/images/placeholder.avif">
+                    <source type="image/webp" srcset="/assets/images/placeholder.webp">
+                    <img
+                            src="/assets/images/placeholder.jpg"
+                            alt="React"
+                            class="media__img"
+                            width="640" height="360"
+                            loading="lazy" decoding="async" />
+                </picture>
             </figure>
             <h3 class="news-card__title">React</h3>
             <p class="news-card__excerpt">Заплановано вивчення основ React…</p>
